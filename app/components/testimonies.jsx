@@ -41,7 +41,7 @@ export default function Testimonies() {
     },
   ];
   const stars = [];
-    for(let i = 0; 1<5; i++) {
+    for(let i = 0; i < 5; i++) {
       stars.push(<Star fill="currentColor" className="text-amber-400" size={15} />);
   };
   return (
@@ -63,7 +63,7 @@ export default function Testimonies() {
                 <div className="absolute bottom-0 p-3 z-10 bg-linear-to-t from-amber-800 to-transparent w-full min-h-20 items-center justify-center pt-10">
                   <p className="text-gray-100 capitalize font-bold text-xl">{data.name}</p>
 
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-row gap-1 mb-2 ">
                     {stars}
                   </div>
                   <p className="text-gray-50 capitalize text-sm italic">{`"${data.said}"`}</p>
