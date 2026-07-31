@@ -4,6 +4,7 @@ import TopBar from "./components/topBar";
 import Pricing from "./components/pricing";
 import Collections from "./components/collections";
 import About from "./components/about";
+import Testimonies from "./components/testimonies";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Header />
       <About/>
       <Collections />
+      <Testimonies />
     </div>
   );
 }

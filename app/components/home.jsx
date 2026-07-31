@@ -10,7 +10,7 @@ export default function Header() {
         <div className="mt-5 flex gap-3">
           <Link href={"#about"} className="text-amber-700 capitalize border border-gray-800 rounded-xl p-3 cursor-pointer hover:bg-amber-300 transition-delay-500 font-bold">learn more</Link>
 
-          <button className="text-gray-100 capitalize border border-gray-600 rounded-xl p-3 cursor-pointer bg-amber-600 hover:bg-amber-700 font-bold">shop now!</button>
+          <Link href={"https://wa.me/2349016109729"} className="text-gray-100 capitalize border border-gray-600 rounded-xl p-3 cursor-pointer bg-amber-600 hover:bg-amber-700 font-bold">shop now!</Link>
         </div>
       </div>
       <div className="lg:h-full w-0 lg:w-fit flex items-center lg:justify-center lg:pr-10">

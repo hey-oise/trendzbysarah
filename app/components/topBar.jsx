@@ -14,12 +14,12 @@ export default function TopBar() {
         <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#home"}>home</Link>
         <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#about"}>about</Link>
         <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#collections"}>collections</Link>
-        <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#testemonies"}>testimonies</Link>
+        <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#Testimonial"}>Testimonial</Link>
         <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#contact us"}>contact us</Link>
 
       </div>
       <div className="">
-        <button className="text-gray-100 capitalize border border-gray-600 rounded-xl p-2 cursor-pointer bg-amber-900 hover:bg-amber-950 font-bold text-sm">shop now!</button>
+        <Link href={"https://wa.me/2349016109729"} className="text-gray-100 capitalize border border-gray-600 rounded-xl p-2 cursor-pointer bg-amber-900 hover:bg-amber-950 font-bold text-sm">shop now!</Link>
 
         </div>
     </div>
