@@ -42,10 +42,10 @@ export default function Testimonies() {
   ];
   const stars = [];
     for(let i = 0; i < 5; i++) {
-      stars.push(<Star fill="currentColor" className="text-amber-400" size={15} />);
+      stars.push(<Star key={i} fill="currentColor" className="text-amber-400" size={15} />);
   };
   return (
-    <div id="Testimonial" className="scroll-mt-20 bg-amber-50 py-10 gap-10 min-h-150 w-full p-5 lg:p-10 flex flex-col">
+    <div id="Testimonial" className="scroll-mt-20 bg-amber-50 py-10 gap-10 min-h-150 w-full p-5 lg:p-10 flex flex-col border-b border-amber-200 pb-10">
       <div className="flex flex-col gap-2 justify-center">
         <p className="text-gray-700 capitalize font-bold text-2xl">What Our Customers Say</p>
         <p className="capitalize text-gray-500 max-w-150 font-semibold text-md">{"We're proud to serve customers who love quality, style, and exceptional service. Here's what some of them have to say."}</p>

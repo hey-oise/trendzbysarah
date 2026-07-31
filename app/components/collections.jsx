@@ -82,7 +82,7 @@ export default function Collections() {
     }
   ];
   return (
-    <div id="collections" className="scroll-mt-20 bg-gray-50 py-10 gap-10 min-h-150 w-full p-5 lg:p-10 flex flex-col">
+    <div id="collections" className="scroll-mt-20 bg-gray-50 py-10 gap-10 min-h-150 w-full p-5 lg:p-10 flex flex-col border-b">
       <div className="flex flex-col gap-2 justify-center">
         <p className="text-gray-700 capitalize font-bold text-2xl">{"explore Our Collections"}</p>
         <p className="capitalize text-gray-500 max-w-150 font-semibold text-md">{"Whether you're refreshing your wardrobe, upgrading your accessories, or shopping for practical home appliances, our collections are designed to suit your lifestyle."}</p>
@@ -96,7 +96,7 @@ export default function Collections() {
           className="embla__slide flex-none w-[85%] md:w-[320px]">
           <div className="flex flex-row gap-5 m-auto">
             <div className="w-70 h-100 rounded-3xl overflow-hidden border border-gray-300 relative">
-              <Image src={data.image} alt="image" width={700} height={1000} className="w-full h-full z-0 object-cover pointer-events-none select-none" draggable={false}></Image>
+              <Image src={data.image} alt={data.name} width={700} height={1000} className="w-full h-full z-0 object-cover pointer-events-none select-none" draggable={false}></Image>
               <div className="absolute bottom-0 p-3 z-10 bg-linear-to-t from-black to-transparent w-full min-h-20 items-center justify-center pt-10">
                   <p className="text-gray-100 capitalize font-bold text-xl">{data.name}</p>
                   {data.items.map((text, key) => {
