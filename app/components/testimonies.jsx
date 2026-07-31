@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import useEmblaCarousel from 'embla-carousel-react';
+import { Star } from "lucide-react";
 
 export default function Testimonies() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -39,6 +40,10 @@ export default function Testimonies() {
       said: "Shopping with TrendzBySarah was easy and stress-free. I'll definitely recommend it to my friends.",
     },
   ];
+  const stars = [];
+    for(let i = 0; 1<5; i++) {
+      stars.push(<Star fill="currentColor" className="text-amber-400" size={15} />);
+  };
   return (
     <div id="Testimonial" className="scroll-mt-20 bg-amber-50 py-10 gap-10 min-h-150 w-full p-5 lg:p-10 flex flex-col">
       <div className="flex flex-col gap-2 justify-center">
@@ -55,8 +60,12 @@ export default function Testimonies() {
           <div className="flex flex-row gap-5 m-auto">
             <div className="w-80 h-100 rounded-3xl overflow-hidden border border-amber-300 relative">
               <Image src={data.image} alt="image" width={700} height={1000} className="w-full h-full z-0 object-cover pointer-events-none select-none" draggable={false}></Image>
-              <div className="absolute bottom-0 p-3 z-10 bg-linear-to-t from-amber-800 to-transparent w-full min-h-20 items-center justify-center pt-10">
+                <div className="absolute bottom-0 p-3 z-10 bg-linear-to-t from-amber-800 to-transparent w-full min-h-20 items-center justify-center pt-10">
                   <p className="text-gray-100 capitalize font-bold text-xl">{data.name}</p>
+
+                  <div className="flex flex-col gap-1">
+                    {stars}
+                  </div>
                   <p className="text-gray-50 capitalize text-sm italic">{`"${data.said}"`}</p>
 
               </div>
