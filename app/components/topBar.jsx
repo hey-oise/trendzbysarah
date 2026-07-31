@@ -15,7 +15,7 @@ export default function TopBar() {
         <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#about"}>about</Link>
         <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#collections"}>collections</Link>
         <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#Testimonial"}>Testimonial</Link>
-        <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#contact us"}>contact us</Link>
+        <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#support"}>contact us</Link>
 
       </div>
       <div className="">
