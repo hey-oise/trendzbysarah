@@ -48,6 +48,28 @@ export default function Collections() {
     },
     {
       id: 4,
+      name: "Beauty & Personal Care",
+      image: "/collections/cosmetics.jpg",
+      items: [
+        "perfumes",
+        "skin care",
+        "makeup",
+        "hair assesories",
+      ],
+    },
+    {
+      id: 5,
+      name: "Home essentials",
+      image: "/collections/essentials.jpg",
+      items: [
+        "Storage & Organizers",
+        "Kitchenware",
+        "Home Décor",
+        "Cleaning Essentials",
+      ],
+    },
+    {
+      id: 6,
       name: "Home Appliances",
       image: "/collections/appliance.jpg",
       items: [
@@ -57,20 +79,20 @@ export default function Collections() {
         "Irons",
         "Fans",
       ],
-    },
+    }
   ];
   return (
     <div id="collections" className="scroll-mt-20 bg-gray-50 py-10 gap-10 min-h-150 w-full p-5 lg:p-10 flex flex-col">
       <div className="flex flex-col gap-2 justify-center">
-        <p className="text-gray-700 capitalize font-bold text-2xl">{"Discover Our Collections"}</p>
+        <p className="text-gray-700 capitalize font-bold text-2xl">{"explore Our Collections"}</p>
         <p className="capitalize text-gray-500 max-w-150 font-semibold text-md">{"Whether you're refreshing your wardrobe, upgrading your accessories, or shopping for practical home appliances, our collections are designed to suit your lifestyle."}</p>
       </div>
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
-      {collections.map((data, key) => {
+      {collections.map((data) => {
         return (
-          <div key={key}
+          <div key={data.id}
           className="embla__slide flex-none w-[85%] md:w-[320px]">
           <div className="flex flex-row gap-5 m-auto">
             <div className="w-70 h-100 rounded-3xl overflow-hidden border border-gray-300 relative">
@@ -80,6 +102,8 @@ export default function Collections() {
                   {data.items.map((text, key) => {
                     return <p key={key} className="text-gray-50 capitalize font-bold text-sm">{text}</p>
                   })}
+                  <p className="text-gray-50 capitalize font-bold text-sm">etc</p>
+
               </div>
             </div>
             </div>
