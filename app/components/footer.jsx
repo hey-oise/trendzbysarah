@@ -9,11 +9,25 @@ import {
 } from "react-icons/fa";
 import {FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { useEffect, useState, useRef } from "react";
+
 
 export default function Footer() {
-
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+      }
+    }, { threshold: 0.4 })
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => observer.disconnect();
+  }, [])
   return (
-    <div id="support" className="scroll-mt-20 bg-amber-100 py-10 gap-10 min-h-100 w-full p-5 lg:p-10 flex flex-col gap-1 relative">
+    <div ref={ref} id="support" className={`scroll-mt-20 bg-amber-100 py-10 gap-10 min-h-100 w-full p-5 lg:p-10 flex flex-col gap-1 relative transition-all duration-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
       <div className="flex flex-col gap-2 justify-center">
         <p className="text-amber-700 capitalize font-bold text-2xl">get in touch</p>
         <p className="capitalize text-amber-500 max-w-150 font-semibold text-md">{"Whether you're looking for the latest fashion, stylish accessories, or quality home essentials, we're here to help. Reach out to us anytime—we'd love to hear from you."}</p>

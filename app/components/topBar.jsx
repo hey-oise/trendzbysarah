@@ -11,15 +11,15 @@ export default function TopBar() {
         <p className="text-amber-500 font-bold capitalize flex gap-1 text-md ml-1"> trendzbysarah</p>
       </div>
       <div className="m-auto justify-center items-center flex gap-2 w-0 h-0 overflow-hidden lg:w-fit pr-10 lg:h-fit">
-        <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#home"}>home</Link>
-        <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#about"}>about</Link>
-        <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#collections"}>collections</Link>
-        <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#Testimonial"}>Testimonial</Link>
-        <Link className="text-amber-700 font-semibold capitalize hover:underline text-md" href={"#support"}>contact us</Link>
+        <Link className="text-amber-700 transition-all duration-500 font-semibold capitalize hover:underline text-md" href={"#home"}>home</Link>
+        <Link className="text-amber-700 transition-all duration-500 font-semibold capitalize hover:underline text-md" href={"#about"}>about</Link>
+        <Link className="text-amber-700 transition-all duration-500 font-semibold capitalize hover:underline text-md" href={"#collections"}>collections</Link>
+        <Link className="text-amber-700 transition-all duration-500 font-semibold capitalize hover:underline text-md" href={"#Testimonial"}>Testimonial</Link>
+        <Link className="text-amber-700 transition-all duration-500 font-semibold capitalize hover:underline text-md" href={"#support"}>contact us</Link>
 
       </div>
       <div className="">
-        <Link href={"https://wa.me/2349016109729"} className="text-gray-100 capitalize border border-gray-600 rounded-xl p-2 cursor-pointer bg-amber-900 hover:bg-amber-950 font-bold text-sm">shop now!</Link>
+        <Link href={"https://wa.me/2349016109729"} className="text-gray-100 capitalize border border-gray-600 rounded-xl p-2 cursor-pointer bg-amber-900 hover:bg-amber-950 font-bold text-sm  transition-all duration-500">shop now!</Link>
 
         </div>
     </div>

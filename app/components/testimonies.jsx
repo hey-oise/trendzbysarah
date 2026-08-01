@@ -2,6 +2,7 @@
 import Image from "next/image";
 import useEmblaCarousel from 'embla-carousel-react';
 import { Star } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Testimonies() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -44,8 +45,22 @@ export default function Testimonies() {
     for(let i = 0; i < 5; i++) {
       stars.push(<Star key={i} fill="currentColor" className="text-amber-400" size={15} />);
   };
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+      }
+    }, { threshold: 0.4 })
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => observer.disconnect();
+  }, [])
   return (
-    <div id="Testimonial" className="scroll-mt-20 bg-amber-50 py-10 gap-10 min-h-150 w-full p-5 lg:p-10 flex flex-col border-b border-amber-200 pb-10">
+    <>
+    <div ref={ref} id="Testimonial" className={`scroll-mt-20 bg-amber-50 py-10 gap-10 min-h-150 w-full p-5 lg:p-10 flex flex-col border-b border-amber-200 pb-10 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
       <div className="flex flex-col gap-2 justify-center">
         <p className="text-gray-700 capitalize font-bold text-2xl">What Our Customers Say</p>
         <p className="capitalize text-gray-500 max-w-150 font-semibold text-md">{"We're proud to serve customers who love quality, style, and exceptional service. Here's what some of them have to say."}</p>
@@ -57,7 +72,7 @@ export default function Testimonies() {
         return (
           <div key={data.id}
           className="embla__slide flex-none w-[85%] md:w-[320px]">
-          <div className="flex flex-row gap-5 m-auto">
+          <div className="flex flex-row gap-5 m-auto rotate-0 hover:scale-102 transition-all duration-500">
             <div className="w-80 h-100 rounded-3xl overflow-hidden border border-amber-300 relative">
               <Image src={data.image} alt="image" width={700} height={1000} className="w-full h-full z-0 object-cover pointer-events-none select-none" draggable={false}></Image>
                 <div className="absolute bottom-0 p-3 z-10 bg-linear-to-t from-amber-800 to-transparent w-full min-h-20 items-center justify-center pt-10">
@@ -90,6 +105,7 @@ export default function Testimonies() {
       {/* <div className="h-full w-fit m-auto lg:m-0 flex items-center justify-center lg:pr-10">
         <Image src={"/about.jpg"} alt="image" width={250} height={700} className="rounded-4xl rotate-10 hover:rotate-0 transition-duration-1000"></Image>
       </div>*/}
-    </div>
+      </div>
+    </>
   )
 }
